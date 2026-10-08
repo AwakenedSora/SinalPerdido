@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="@color/panel"
+        android:strokeColor="@color/phosphor_dim"
+        android:strokeWidth="2"
+        android:pathData="M4,60 A56,56 0 1,1 116,60 A56,56 0 1,1 4,60 Z" />
+    <!-- Lua -->
+    <path
+        android:fillColor="@color/moon"
+        android:pathData="M28,24 A9,9 0 1,0 38,36 A7,7 0 1,1 28,24 Z" />
+    <!-- Estrelas -->
+    <path
+        android:fillColor="@color/text_secondary"
+        android:pathData="M96,30 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 M24,62 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0 M98,70 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+    <group>
+        <path
+            android:strokeColor="@color/text_primary"
+            android:strokeWidth="3"
+            android:strokeLineCap="round"
+            android:pathData="M60,34 L44,100 M60,34 L76,100 M51,64 L69,64 M48,78 L72,78 M46,90 L74,90 M51,64 L72,78 M69,64 L48,78 M48,78 L74,90 M72,78 L46,90" />
+        <path
+            android:strokeColor="@color/phosphor"
+            android:strokeWidth="3"
+            android:strokeLineCap="round"
+            android:pathData="M70,22 A14,14 0 0,1 70,42 M77,15 A23,23 0 0,1 77,49 M50,22 A14,14 0 0,0 50,42 M43,15 A23,23 0 0,0 43,49" />
+        <path
+            android:fillColor="@color/stamp_red"
+            android:pathData="M54,32 A6,6 0 1,1 66,32 A6,6 0 1,1 54,32 Z" />
+    </group>
+    <path
+        android:strokeColor="@color/phosphor_dim"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M30,101 L90,101" />
+</vector>

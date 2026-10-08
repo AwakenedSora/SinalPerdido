@@ -1,0 +1,51 @@
+<resources>
+    <style name="Base.Theme.SinalPerdido" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/phosphor</item>
+        <item name="colorOnPrimary">@color/night</item>
+        <item name="colorSecondary">@color/text_secondary</item>
+        <item name="colorSecondaryContainer">@color/panel_border</item>
+        <item name="colorOnSecondaryContainer">@color/phosphor</item>
+        <item name="colorError">@color/error_coral</item>
+        <item name="android:colorBackground">@color/night</item>
+        <item name="colorSurface">@color/panel</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="android:statusBarColor">@color/night</item>
+        <item name="android:navigationBarColor">@color/night</item>
+    </style>
+
+    <style name="Theme.SinalPerdido" parent="Base.Theme.SinalPerdido" />
+
+    <!-- Estilos de texto do dossiê -->
+    <style name="DossierSection">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spacing_large</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="android:textColor">@color/phosphor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DossierBody">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spacing_small</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.BodyMedium</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+    </style>
+
+    <style name="DossierCard" parent="DossierBody">
+        <item name="android:background">@drawable/bg_panel</item>
+        <item name="android:padding">@dimen/spacing_medium</item>
+    </style>
+
+    <style name="DossierCardTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medium</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="android:textColor">@color/warning_amber</item>
+    </style>
+</resources>

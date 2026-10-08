@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollDossier"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night"
+    android:fillViewport="true"
+    tools:context=".DossierActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutDossierContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
+
+        <!-- Identificação -->
+        <TextView
+            android:id="@+id/textCaseId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="@string/dossier_case_id"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            android:textColor="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/textCaseTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="monospace"
+            android:text="@string/dossier_case_title"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="@color/phosphor"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textCaseClassification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@drawable/bg_stamp"
+            android:fontFamily="monospace"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:text="@string/dossier_classification"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="@color/stamp_red" />
+
+        <!-- 01 Resumo -->
+        <TextView
+            android:id="@+id/textSummaryHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_summary" />
+
+        <TextView
+            android:id="@+id/textSummary"
+            style="@style/DossierBody"
+            android:text="@string/summary_text" />
+
+        <!-- 02 Suspeitos -->
+        <TextView
+            android:id="@+id/textSuspectsHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_suspects" />
+
+        <TextView
+            android:id="@+id/textSuspectOtavioName"
+            style="@style/DossierCardTitle"
+            android:text="@string/suspect_otavio_name" />
+
+        <TextView
+            android:id="@+id/textSuspectOtavio"
+            style="@style/DossierCard"
+            android:text="@string/suspect_otavio_text" />
+
+        <TextView
+            android:id="@+id/textSuspectLiaName"
+            style="@style/DossierCardTitle"
+            android:text="@string/suspect_lia_name" />
+
+        <TextView
+            android:id="@+id/textSuspectLia"
+            style="@style/DossierCard"
+            android:text="@string/suspect_lia_text" />
+
+        <TextView
+            android:id="@+id/textSuspectCaioName"
+            style="@style/DossierCardTitle"
+            android:text="@string/suspect_caio_name" />
+
+        <TextView
+            android:id="@+id/textSuspectCaio"
+            style="@style/DossierCard"
+            android:text="@string/suspect_caio_text" />
+
+        <TextView
+            android:id="@+id/textSuspectSkipName"
+            style="@style/DossierCardTitle"
+            android:text="@string/suspect_skip_name" />
+
+        <TextView
+            android:id="@+id/textSuspectSkip"
+            style="@style/DossierCard"
+            android:text="@string/suspect_skip_text" />
+
+        <!-- 03 Evidências textuais -->
+        <TextView
+            android:id="@+id/textTextEvidenceHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_text_evidence" />
+
+        <TextView
+            android:id="@+id/textOperatorTitle"
+            style="@style/DossierCardTitle"
+            android:text="@string/evidence_operator_title" />
+
+        <TextView
+            android:id="@+id/textOperatorStatement"
+            style="@style/DossierCard"
+            android:text="@string/evidence_operator_text"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/textGateTitle"
+            style="@style/DossierCardTitle"
+            android:text="@string/evidence_gate_title" />
+
+        <TextView
+            android:id="@+id/textGateLog"
+            style="@style/DossierCard"
+            android:fontFamily="monospace"
+            android:text="@string/evidence_gate_text" />
+
+        <TextView
+            android:id="@+id/textFogTitle"
+            style="@style/DossierCardTitle"
+            android:text="@string/evidence_fog_title" />
+
+        <TextView
+            android:id="@+id/textFogNote"
+            style="@style/DossierCard"
+            android:text="@string/evidence_fog_text" />
+
+        <TextView
+            android:id="@+id/textMorseTitle"
+            style="@style/DossierCardTitle"
+            android:text="@string/evidence_morse_title" />
+
+        <TextView
+            android:id="@+id/textMorseTable"
+            style="@style/DossierCard"
+            android:fontFamily="monospace"
+            android:text="@string/evidence_morse_table"
+            android:textColor="@color/phosphor" />
+
+        <!-- 04 Evidência visual: imagem e texto separados por uma Guideline vertical -->
+        <TextView
+            android:id="@+id/textVisualEvidenceHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_visual_evidence" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutVisualEvidence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@drawable/bg_panel"
+            android:padding="12dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideVisualEvidence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.55" />
+
+            <ImageView
+                android:id="@+id/imageSignalMap"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="12dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/cd_signal_map"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_signal_map"
+                app:layout_constraintDimensionRatio="H,4:3"
+                app:layout_constraintEnd_toStartOf="@id/guideVisualEvidence"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textVisualEvidenceTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/visual_evidence_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                android:textColor="@color/warning_amber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideVisualEvidence"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textVisualEvidence"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/visual_evidence_text"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="@color/text_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideVisualEvidence"
+                app:layout_constraintTop_toBottomOf="@id/textVisualEvidenceTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 05 Evidência sonora -->
+        <TextView
+            android:id="@+id/textAudioEvidenceHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_audio_evidence" />
+
+        <TextView
+            android:id="@+id/textAudioEvidence"
+            style="@style/DossierBody"
+            android:text="@string/audio_evidence_text" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutAudioPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@drawable/bg_panel"
+            android:padding="@dimen/spacing_medium">
+
+            <TextView
+                android:id="@+id/textAudioStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:fontFamily="monospace"
+                android:text="@string/audio_status_waiting"
+                android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                android:textColor="@color/phosphor"
+                app:layout_constraintEnd_toStartOf="@id/textAudioTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textAudioTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/text_secondary"
+                app:layout_constraintBaseline_toBaselineOf="@id/textAudioStatus"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="00:00 / 00:32" />
+
+            <!-- Chain horizontal: Reproduzir | Pausar | Início -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPlay"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="4dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/button_play"
+                app:layout_constraintEnd_toStartOf="@id/buttonPause"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textAudioStatus" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPause"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginHorizontal="4dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/button_pause"
+                app:layout_constraintEnd_toStartOf="@id/buttonRestart"
+                app:layout_constraintStart_toEndOf="@id/buttonPlay"
+                app:layout_constraintTop_toTopOf="@id/buttonPlay" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRestart"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginStart="4dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/button_restart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/buttonPause"
+                app:layout_constraintTop_toTopOf="@id/buttonPlay" />
+
+            <!-- Recuar e avançar dividem o espaço igualmente -->
+            <LinearLayout
+                android:id="@+id/layoutSeekButtons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonPlay">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonRewind"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/cd_button_rewind"
+                    android:text="@string/button_rewind" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonForward"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/cd_button_forward"
+                    android:text="@string/button_forward" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 06 Solução -->
+        <TextView
+            android:id="@+id/textSolutionHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_solution" />
+
+        <TextView
+            android:id="@+id/textSolutionInstructions"
+            style="@style/DossierBody"
+            android:text="@string/solution_instructions" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutAnswer"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:hint="@string/hint_answer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLength="40"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutJustification"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:hint="@string/hint_justification"
+            app:counterEnabled="true"
+            app:counterMaxLength="400">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editJustification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="400"
+                android:minLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonVerify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:text="@string/button_verify"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textResult"
+            style="@style/DossierCard"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:freezesText="true"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:visibility="gone"
+            tools:text="@string/result_incorrect"
+            tools:visibility="visible" />
+
+        <!-- 07 Créditos -->
+        <TextView
+            android:id="@+id/textCreditsHeader"
+            style="@style/DossierSection"
+            android:text="@string/section_credits" />
+
+        <TextView
+            android:id="@+id/textCredits"
+            style="@style/DossierBody"
+            android:text="@string/credits_text"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="@color/text_secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonBack"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:text="@string/button_back" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
